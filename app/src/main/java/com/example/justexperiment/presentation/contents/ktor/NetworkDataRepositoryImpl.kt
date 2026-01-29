@@ -1,4 +1,4 @@
-package com.example.justexperiment.presentation.ktor
+package com.example.justexperiment.presentation.contents.ktor
 
 import io.ktor.http.ContentType
 import io.ktor.client.HttpClient

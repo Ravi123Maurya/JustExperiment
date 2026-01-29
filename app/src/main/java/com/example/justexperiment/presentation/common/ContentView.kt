@@ -23,12 +23,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.justexperiment.presentation.utils.Content
 import com.example.justexperiment.presentation.utils.contentList
 
 @Composable
 fun ContentView(
     id: Int = 0,
+    onNavBack: () -> Unit = {},
     content: @Composable () -> Unit
 ) {
 
@@ -36,7 +38,7 @@ fun ContentView(
 
     NavBackScaffold(
         title = data?.title,
-        onNavBack = {}
+        onNavBack = onNavBack
     ) { innerPadding ->
 
         if (data == null) {
@@ -115,6 +117,6 @@ private fun TopSection(content: Content) {
 
 @Preview
 @Composable
-fun ContentViePreview(modifier: Modifier = Modifier) {
+fun ContentViewPreview(modifier: Modifier = Modifier) {
     ContentView() { }
 }

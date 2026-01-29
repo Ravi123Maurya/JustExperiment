@@ -63,6 +63,9 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core")
 
+    // Compose markdown
+    implementation(libs.boswelja.composeMarkdown.material3)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

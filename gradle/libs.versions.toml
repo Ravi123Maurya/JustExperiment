@@ -13,7 +13,7 @@ uiTestJunit4 = "1.9.4"
 #ktor
 kotlinxSerializationJson = "1.9.0"
 ktorClient = "3.0.0"
-
+composeMarkdown = "1.1.5"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -31,6 +31,7 @@ androidx-compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-
 androidx-compose-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4", version.ref = "uiTestJunit4" }
+boswelja-composeMarkdown-material3 = { group = "io.github.boswelja.markdown", name = "material3", version.ref = "composeMarkdown" }
 
 ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktorClient" }
 ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktorClient" }

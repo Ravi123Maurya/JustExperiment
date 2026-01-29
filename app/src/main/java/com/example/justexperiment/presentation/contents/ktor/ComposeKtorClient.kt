@@ -1,4 +1,4 @@
-package com.example.justexperiment.presentation.ktor
+package com.example.justexperiment.presentation.contents.ktor
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
