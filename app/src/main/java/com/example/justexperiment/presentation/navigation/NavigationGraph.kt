@@ -10,6 +10,7 @@ import androidx.navigation.toRoute
 import com.example.justexperiment.presentation.contents.animations.AnimationScreen
 import com.example.justexperiment.presentation.contents.broadcastreceiver.BroadcastReceiverScreen
 import com.example.justexperiment.presentation.contents.broadcastreceiver.util.AirplaneModeReceiver
+import com.example.justexperiment.presentation.contents.iap.InAppPurchaseScreen
 import com.example.justexperiment.presentation.contents.navigation.NavigationScreen
 import com.example.justexperiment.presentation.contents.pathline.PathLineScreen
 import com.example.justexperiment.presentation.contents.ktor.CensoredTextScreen
@@ -53,6 +54,11 @@ fun NavigationGraph(navController: NavHostController){
         composable<Route.BroadcastScreen> {
             val args = it.toRoute<Route.BroadcastScreen>()
             BroadcastReceiverScreen(args.contentId, navController)
+        }
+
+        composable<Route.InAppPurchaseScreen> {
+            val args = it.toRoute<Route.InAppPurchaseScreen>()
+            InAppPurchaseScreen(args.contentId, navController)
         }
 
     }

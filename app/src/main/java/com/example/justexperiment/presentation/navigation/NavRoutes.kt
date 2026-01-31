@@ -32,5 +32,10 @@ sealed interface Route {
     data class BroadcastScreen(
         val contentId: Int
     ) : Route
+
+    @Serializable
+    data class InAppPurchaseScreen(
+        val contentId: Int
+    ) : Route
 }
 

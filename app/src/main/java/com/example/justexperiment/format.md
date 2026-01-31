@@ -1,6 +1,6 @@
 # Follow this format to create new screen/content
 
-* Firstly, Create ScreenRoute [Route] and Include in [NavigationGraph]
+* First, Create ScreenRoute [NavRoutes.kt] and Include in [NavigationGraph.kt]
 ```kotlin
     @Serializable
     data class ExampleScreen(

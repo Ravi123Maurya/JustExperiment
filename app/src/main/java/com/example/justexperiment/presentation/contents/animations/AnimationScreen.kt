@@ -27,6 +27,7 @@ import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.animation.slideOutVertically
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -58,6 +59,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.blur
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.draw.rotate
@@ -69,10 +71,13 @@ import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.StrokeJoin
 import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.boswelja.markdown.material3.MarkdownDocument
+import com.example.justexperiment.R
 import com.example.justexperiment.presentation.common.ContentView
 import com.example.justexperiment.presentation.common.JustCard
 import com.example.justexperiment.presentation.contents.animations.util.Circle
@@ -82,6 +87,7 @@ import com.example.justexperiment.presentation.contents.animations.util.Square
 import com.example.justexperiment.presentation.contents.animations.util.Triangle
 import com.example.justexperiment.presentation.navigation.Route
 import com.example.justexperiment.presentation.utils.Content
+import com.example.justexperiment.presentation.utils.clickableNoRipple
 import com.example.justexperiment.presentation.utils.colors
 import kotlin.collections.listOf
 
@@ -123,6 +129,7 @@ private fun AnimationScreenContent() {
         JustCrossfade()
         JustMarkdown()
         JustInfiniteRotation()
+        JustBlur()
 
     }
 
@@ -434,6 +441,44 @@ private fun JustInfiniteRotation() {
             }
 
         }
+    }
+}
+
+
+@Composable
+private fun JustBlur() {
+
+    var hasClicked by remember { mutableStateOf(false) }
+    val animateBlur by animateDpAsState(
+        targetValue = if (hasClicked) 4.dp else 0.dp,
+        animationSpec = tween(1000, delayMillis = 100)
+    )
+
+    JustCard(
+        cardElevation = 4.dp
+    ) {
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .clickableNoRipple(onClick = { hasClicked = !hasClicked }),
+            contentAlignment = Alignment.Center
+        ) {
+            Image(
+                painter = painterResource(R.drawable.app_icon),
+                contentDescription = "blurred-image",
+                modifier = Modifier
+                    .size(150.dp)
+                    .blur(animateBlur),
+                contentScale = ContentScale.Fit
+            )
+        }
+
+        Text(
+            text = "I'm blurred text\non Android 12 and above",
+            modifier = Modifier
+                .clip(RoundedCornerShape(8.dp))
+                .blur(2.dp, 4.dp)
+        )
     }
 }
 

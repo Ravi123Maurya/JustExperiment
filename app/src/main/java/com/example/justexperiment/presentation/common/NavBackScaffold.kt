@@ -3,6 +3,7 @@ package com.example.justexperiment.presentation.common
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBackIosNew
+import androidx.compose.material.icons.rounded.ArrowBackIosNew
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -26,7 +27,7 @@ fun NavBackScaffold(
             CenterAlignedTopAppBar(
                 title = { Text("$title") },
                 navigationIcon = {
-                    IconButton(onNavBack) { Icon(Icons.Filled.ArrowBackIosNew, "go back") }
+                    IconButton(onNavBack) { Icon(Icons.Rounded.ArrowBackIosNew, "go back") }
                 }
             )
         }

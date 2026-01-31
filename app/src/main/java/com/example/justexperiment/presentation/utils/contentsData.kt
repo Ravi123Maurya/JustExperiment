@@ -6,6 +6,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import com.example.justexperiment.presentation.contents.animations.animation
 import com.example.justexperiment.presentation.contents.broadcastreceiver.broadcastReceiver
+import com.example.justexperiment.presentation.contents.iap.inAppPurchase
 import com.example.justexperiment.presentation.contents.pathline.pathLine
 import com.example.justexperiment.presentation.navigation.Route
 
@@ -21,7 +22,8 @@ val contentList = listOf(
     animation,
     ktorLearn,
     pathLine,
-    broadcastReceiver
+    broadcastReceiver,
+    inAppPurchase
 )
 
 

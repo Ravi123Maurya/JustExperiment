@@ -66,6 +66,11 @@ dependencies {
     // Compose markdown
     implementation(libs.boswelja.composeMarkdown.material3)
 
+
+    // Play Billing (iap)
+    implementation("com.android.billingclient:billing:8.0.0")
+    implementation ("com.github.akshaaatt:Google-IAP:1.8.0")
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

@@ -12,8 +12,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
-import com.example.justexperiment.presentation.utils.clickableW
-import java.util.Scanner
+import com.example.justexperiment.presentation.utils.clickableNoRipple
 
 @Composable
 fun JustBigIconButton(
@@ -22,13 +21,13 @@ fun JustBigIconButton(
     label: String? = null,
     tint: Color = Color.Blue,
     onClick: () -> Unit
-){
+) {
     Box(
         modifier = modifier
             .size(80.dp)
             .clip(CircleShape)
             .background(tint.copy(alpha = 0.1f))
-            .clickableW(onClick = onClick),
+            .clickableNoRipple(onClick = onClick),
         contentAlignment = Alignment.Center
     ) {
         Icon(
